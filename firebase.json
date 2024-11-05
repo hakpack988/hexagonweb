@@ -1,0 +1,25 @@
+{
+  "hosting": {
+    "target": "current-directory",
+    "public": "dist/current-directory",
+    "ignore": [
+      "**/.*"
+    ],
+  
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 4200
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}

@@ -1,0 +1,7 @@
+build notes for TheYard project
+
+npm install -g @angular/cli
+
+npm install @emailjs/browser --save : this install the email portion.
+
+
