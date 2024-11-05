@@ -1,0 +1,9 @@
+<div class="modal">
+      <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+      <h2>Subscribe to our mailing list</h2>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email"> -->
+      <button type="submit" [disabled]="emailForm.invalid">Submit</button>
+    </form>
+  </div>
+  
