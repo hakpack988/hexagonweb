@@ -1,0 +1,16 @@
+.border-bottom{
+    margin-top: 200px;
+
+}
+
+.headliner {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* You might need to adjust the height */
+}
+
+.indented {
+        padding-left: 50px;
+        font-weight: bold;
+}

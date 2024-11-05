@@ -1,0 +1,149 @@
+.bg-gradient {
+  background: linear-gradient(132.59deg, #51535a 26.05%, #616268 88.82%);
+}
+iframe {
+  flex-grow: 1; border: none; margin: 0; padding: 0;
+}
+
+.container-middle {
+  margin-top: 30pt;
+  display: flex;
+  width: 100%;
+  height: 350px;
+  background-color: transparent;
+
+.small-boxes {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+  .small-box {
+      flex: 1;
+      background-color:  transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: white;
+      &:not(:last-child) {
+        margin-bottom: 10px; // You can adjust the margin as needed.
+      }
+    }
+  }
+
+  .large-box {
+    width: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    //color:  #043718 88.82%;
+  }
+
+  .middle-space {
+    width: 10%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    //color:  #043718 88.82%;
+ }
+}
+
+
+.border-bottom{
+  margin-bottom: 5pt;
+}
+  .background-image {
+    /* Set the URL of the image */
+   // img class="mx-auto d-block hero-logo" src="../../assets/images/cover1.png" alt="Hexagon Hero Badge"
+    margin-top: 135pt; 
+    margin-bottom: 0pt;
+   background-image: url(../../../assets/images/cover4.png);
+
+    /* Ensure the image covers the entire div */
+    background-size: cover;
+
+    /* Set the background position to center */
+    background-position: center;
+
+    /* Optional: make sure the background is fixed even when the content scrolls */
+    background-attachment: fixed;
+
+    /* Set a minimum height to ensure visibility */
+    min-height: 28vh; /* Adjust height as needed */
+
+    /* Optional: add other styles as needed */
+    background-repeat: no-repeat;
+}
+
+.member-card {
+  background-color: rgb(224, 230, 231);
+  border: 3px solid black
+   /* Optional: remove card border for cleaner look */
+}
+.card-custom .card-header {
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  font-weight: bold;
+  
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+.item-type{
+  padding-left: 20px
+}
+.member-card .card-body {
+  background-color: transparent; /* Optional: adds transparency for readability */
+}
+
+
+
+.custom-header {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjust font size as desired */
+  text-align: center;
+  border-bottom: 1px solid black;
+  
+}
+.sub-header{
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 1.0rem; /* Adjust font size as desired */
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+.bold-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+}
+.member-card {
+  border: 3px solid black;
+}
+.indented-text p {
+  font-weight: bold;
+  padding-left: 20px; /* Adjust indentation as desired */
+  padding-right: 20px;
+}
+
+.bullet-text::before {
+  content: "• ";
+  margin-right: 5px;
+  color: black; /* Change color if needed */
+}
+
+.note-text {
+  font-style: italic;
+}
+.note-text::before {
+  content: "• ";
+  margin-right: 5px;
+  color: black; /* Change color if needed */
+}
