@@ -1,0 +1,60 @@
+
+   
+<section class="container">
+    <header>Please call us at 513-433-hexa or via 
+         the email form provided below.</header>
+        <form class="form" [formGroup]="contactusForm"   (submit)="send()">
+            <div class="input-box">
+            <input type="text" placeholder="Name" formControlName="from_name" />
+            <small *ngIf=
+            "contactusForm.get('from_name')?.invalid 
+            && 
+            (contactusForm.get('from_name')?.touched || contactusForm.get('from_name')?.dirty)
+           
+            "
+            >*Full Name is a required field.</small>
+            </div>
+            
+            <div class="input-box">
+            <input type="text" placeholder="Email" formControlName="email" />
+            <small *ngIf=
+            "contactusForm.get('email')?.invalid 
+            && 
+            (contactusForm.get('email')?.touched || contactusForm.get('message')?.dirty)
+           
+            "
+            >*Valid Email is a required field.</small>
+            </div>
+
+            <div class="input-box">
+            <input type="text" placeholder="subject" formControlName="subject" />
+            <small *ngIf=
+            "contactusForm.get('subject')?.invalid 
+            && 
+            (contactusForm.get('subject')?.touched || contactusForm.get('message')?.dirty)
+           
+            "
+            >*Subject is a required field.</small>
+            </div>
+
+            <div class="textarea">
+                <textarea matInput cdkTextareaAutosize ckdAutosizeMinRows="5" ckdAutosizeMaxRows="10"
+                    placeholder="message" input type="text" formControlName="message">
+                </textarea>
+                <small *ngIf=
+                "contactusForm.get('message')?.invalid 
+                && 
+                (contactusForm.get('message')?.touched  || contactusForm.get('message')?.dirty)
+               
+                "
+                >*Message is a required field.</small>
+            </div>
+                    
+           
+            <input type="submit" value="Submit" class="submit-btn" [disabled]="!contactusForm.valid">
+            
+                <!--button type="submit" class="formbold-btn">Submit</button-->
+                                        
+           <!-- {{ contactusForm.value | json }} -->
+    </form>
+</section>
