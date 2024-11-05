@@ -1,0 +1,76 @@
+/* Style for the navigation item */
+.nav-item {
+    list-style: none; /* Removes default list styling */
+    /* Add more styling as needed */
+}
+
+/* Style for navigation links */
+.nav-link {
+    color: rgb(232, 23, 23); /* Already mentioned as text-white in class, for demonstration */
+    padding: 0px; /* Adjust padding as needed */
+    text-decoration: none; /* Removes underline from links */
+    display: inline-block; /* Align items in line */
+    /* Add more styling as needed */
+}
+
+/* Hover effect for the links */
+.nav-link:hover, .nav-link:focus {
+    text-decoration: none; /* Optional: removes underline on hover/focus */
+    text-decoration-color: black;
+    /* Add more styling for hover effect */
+}
+
+.hover-underline-animation:hover {
+
+        text-decoration: underline; /* Underline on hover */
+        text-decoration-color: black;
+        text-underline-offset: 5px;
+        /* You can add more sophisticated animations with CSS transitions */
+    }
+/* Underline animation on hover REMOVED BECAUSE IT WAS ADDING A WHITE LINE ALONG WITH BLACK LINE */
+// .hover-underline-animation:hover {
+
+//     text-decoration: underline; /* Underline on hover */
+//     text-decoration-color: black;
+//     /* You can add more sophisticated animations with CSS transitions */
+// }
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: white; /* Set background color */
+    border: 1px solid #ddd; /* Border for the dropdown */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for dropdown */
+    /* Add more styling as needed */
+}
+
+/* Styling for dropdown items */
+.dropdown-item {
+    color: black; /* Color of dropdown links */
+    padding: 10px 20px; /* Padding inside dropdown links */
+    text-decoration: none; /* Removes underline from links */
+    // display: block; /* Makes each item a block for better spacing */
+    /* Add more styling as needed */
+}
+
+.dropdown-item:hover {
+  //  background-color: #f8f9fa; /* Change background on hover */
+  background-color: #abafb3; /* Change background on hover */
+  text-decoration: none;
+    /* Add more styling for hover effect */
+}
+
+.custom-margin {
+    margin-right: 30px; /* Adjust this value as needed */
+}
+
+.custom-margin1 {
+    margin-right: 275pt; /* Adjust this value as needed */
+}
+
+.custom-margin2 {
+    margin-right: 0pt; /* Adjust this value as needed */
+}
+
+.nav-link.bold-text {
+    font-weight: bold;
+}
