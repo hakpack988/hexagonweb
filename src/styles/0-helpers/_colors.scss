@@ -1,0 +1,69 @@
+//bootstrap required imports 
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+//css color variables
+:root {
+    //greens
+    // --yPrimary: #2F4939;
+    // --yGreen: #07550F;
+    // --yLightgreen: #269C63;
+
+    --yPrimary: #4d5158;
+     --yGreen: #9ba8b5;
+     --yLightgreen: #abb0b3;
+
+    //neutrals
+    --yWhite: #ffffff;
+    --yOffwhite: #F0F3F6;
+    --yGrey: #828282;
+    --yOffblack: #2D2D2D;
+    --yBlack: #000000;
+    //orange
+    --yOrange: #D07F4B;
+}
+
+$yPrimary: #959596;//color of header
+$yGreen: #d0d3d8;
+$yLightgreen: #cdcedb;
+$yWhite: #ffffff;
+$yOffwhite: #F0F3F6;
+$yGrey: #828282;
+$yOffblack: #2D2D2D;
+$yBlack: #000000;
+$yOrange: #D07F4B;
+
+//setting variables under color name
+$colors: (
+    yPrimary: $yPrimary,
+    yGreen: $yGreen,
+    yLightgreen: $yLightgreen,
+);
+
+//color classes
+
+@each $colorName, $color in $colors {
+    .#{$colorName} {
+        color: #{color};
+    }
+    .bg-#{$colorName} {
+        background-color: #{color};
+    }
+}
+
+// merge with existing $theme-colors map
+$theme-colors: map-merge($theme-colors, (
+  "primary":    $yPrimary,
+  "secondary":  $yGreen,
+  "success":    $yLightgreen,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $yOffwhite,
+  "dark":       $yOffblack,
+  "special":    $yOrange,
+));
+
+// set changes
+@import "node_modules/bootstrap";

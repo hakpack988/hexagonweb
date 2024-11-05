@@ -1,0 +1,17 @@
+//google font imports
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+//Manrope
+$fontfamily-body: 'Manrope', sans-serif;
+
+
+//Alfa Slab One
+$fontfamily-display: 'Alfa Slab One', san-serif;
+h1 {font-family: $fontfamily-display; font-size: clamp(3rem, calc(1rem + 7vw), 7rem); letter-spacing: 3px;}
+h2 {font-family: 'Alfa Slab One', san-serif; text-transform: uppercase;}
+h3 {font-family: 'Manrope', sans-serif; font-weight: 800 !important;}
+
+* {
+    font-family: $fontfamily-body;
+}
+
