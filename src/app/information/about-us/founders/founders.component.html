@@ -1,0 +1,53 @@
+body class="border-bottom">
+<!-- <section class="bg-primary bg-gradient">
+    <div class="container-fluid pt-2 padding-block-600">
+        <div class="pt-5">
+            <h1 class="text-white text-center mt-5">WINNERS TRAIN AT</h1>
+            <img class="mx-auto d-block hero-logo" src="../../assets/yardherobadge.svg" alt="Yard Hero Badge">
+        </div>
+    </div>
+</section> -->
+
+<section class="container margin-top">
+    <header>Founders Club Reservation</header>
+        <form class="form" [formGroup]="foundersForm"   (submit)="send()">
+            <div class="input-box">
+            <input type="text" placeholder="Name" formControlName="from_name" />
+            <small *ngIf=
+            "foundersForm.get('from_name')?.invalid 
+            && 
+            (foundersForm.get('from_name')?.touched || foundersForm.get('from_name')?.dirty)
+           
+            "
+            >*Full Name is a required field.</small>
+            </div>
+            
+            <div class="input-box">
+            <input type="text" placeholder="email" formControlName="email" />
+            <small *ngIf=
+            "foundersForm.get('email')?.invalid 
+            && 
+            (foundersForm.get('email')?.touched || foundersForm.get('email')?.dirty)
+           
+            "
+            >*Valid Email is a required field.</small>
+            </div>
+
+            <div class="input-box">
+            <input type="text" placeholder="Cell" formControlName="cell" />
+            <small *ngIf=
+            "foundersForm.get('cell')?.invalid 
+            && 
+            (foundersForm.get('cell')?.touched || foundersForm.get('cell')?.dirty)
+           
+            "
+            >*Cell is a required field.</small>
+            </div>
+
+            <input type="submit" value="Submit" class="submit-btn" [disabled]="!foundersForm.valid">
+            
+                <!--button type="submit" class="formbold-btn">Submit</button-->
+                                        
+           <!-- {{ contactusForm.value | json }} -->
+    </form>
+</section>

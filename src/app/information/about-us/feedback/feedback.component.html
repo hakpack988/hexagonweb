@@ -1,0 +1,246 @@
+<section class="container pt-4 pb-4">
+  <div class="text-center">
+    <h4 class="heading-txt">Customer Review Form</h4>
+    <h5>Your feedback is very important to us!</h5>
+    <h5>Please take a moment to rate your experience.</h5>
+  </div>
+  <div class="pt-4">
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid': submitted && control['name'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['name'].errors"
+          >
+            <small *ngIf="control['name'].errors['required']">
+              Name is required</small
+            >
+          </small>
+        </div>
+        <div class="col-md-6 form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Phone"
+            formControlName="phone"
+            [ngClass]="{
+              'is-invalid': submitted && control['phone'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['phone'].errors"
+          >
+            <small *ngIf="control['phone'].errors['required']"
+              >Phone is required</small
+            >
+          </small>
+        </div>
+        <div class="col-md-12 form-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': submitted && control['email'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['email'].errors"
+          >
+            <small *ngIf="control['email'].errors['required']"
+              >Email is required</small
+            >
+          </small>
+          <small class="mb-0"
+            >* We may contact you for further clarification</small
+          >
+        </div>
+        <div class="col-md-12 form-group">
+          <p class="fw-bold mb-0">Overall Experience</p>
+        </div>
+        <div class="col-md-12 form-group">
+          <p class="mb-0">Rate your overall experience with us</p>
+          <span class="scale-rating">
+            <label value="1">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="1"
+              />
+              <label style="width: 100%" class="brdr"></label>
+              <label class="text-danger bg-white">POOR</label>
+            </label>
+            <label value="2">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="2"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="3">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="3"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="4">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="4"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="5">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="5"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="6">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="6"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="7">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="7"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="8">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="8"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="9">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="9"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="10">
+              <input
+                type="radio"
+                name="rating"
+                formControlName="rating"
+                value="10"
+              />
+              <label style="width: 100%" class="brdr"></label>
+              <label class="text-success text-end bg-white d-block">Excellent</label
+              >
+            </label>
+          </span>
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['rating'].errors"
+          >
+            <small *ngIf="control['rating'].errors['required']"
+              >This field is required</small
+            >
+          </small>
+        </div>
+        <div class="col-md-12 form-group">
+          <p class="mb-0">Would you recommend us to a friends?</p>
+          <span class="scale-rating mb-0">
+            <label value="YES">
+              <input
+                type="radio"
+                name="recomanded"
+                value="Yes"
+                formControlName="recomanded"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+            <label value="NO">
+              <input
+                type="radio"
+                name="recomanded"
+                value="No"
+                formControlName="recomanded"
+              />
+              <label style="width: 100%" class="brdr"></label>
+            </label>
+          </span>
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['recomanded'].errors"
+          >
+            <small *ngIf="control['recomanded'].errors['required']"
+              >This field is required</small
+            >
+          </small>
+        </div>
+        <div class="col-md-12 form-group mt-1">
+          <textarea
+            placeholder="Comments"
+            class="form-control h-100p"
+            formControlName="comments"
+          ></textarea>
+        </div>
+        <small class="mb-0">
+          <strong>If you have photos you would like to submit, please email them to info@theyardsd.com</strong></small><br><br>
+        <!-- <div class="col-md-12 form-group">
+          <label for="formFile" class="form-label">Upload Picture</label>
+          <input
+            class="form-control"
+            type="file"
+            id="formFile"
+            formControlName="picture"
+          />
+        </div> -->
+        <div class="col-md-12 form-group">
+          <label class="checkbox-wrap text-uppercase">
+            I agree that my review and media can be published on website.
+            <input
+              type="checkbox"
+              name="agegroup"
+              value="I Agree"
+              formControlName="agree"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="col-md-12 form-group text-center">
+          <button class="btns btn-primary">Submit Review</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

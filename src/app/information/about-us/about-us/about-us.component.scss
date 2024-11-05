@@ -1,0 +1,28 @@
+/* General body styling */
+body {
+    margin: 5;
+    padding: 10;
+}
+
+/* Styling for the border-bottom class applied on body */
+.border-bottom {
+    border-bottom: 1px solid #ccc; /* Example, adjust as needed */
+}
+
+/* Padding for the container inside the section */
+.padding-block-200 {
+    padding-top: 150pt; /* Adds space at the top */
+    padding-bottom: 20pt; /* Adds space at the bottom */
+}
+
+/* Background styling for the section */
+.bg-light {
+    background-color: #f8f9fa; /* Light gray background, adjust as needed */
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px; /* Max width of the content, adjust as needed */
+    margin: auto; /* Centers the container */
+    padding: 15px; /* Padding around the content */
+}

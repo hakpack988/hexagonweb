@@ -1,0 +1,1220 @@
+<section class="bg-primary bg-gradient">
+  <div class="container-fluid pt-2 padding-block-600">
+    <div class="pt-5">
+      <h2 class="text-white text-center mt-5">WINNERS WORK AT</h2>
+      <img
+        class="mx-auto d-block hero-logo"
+        src="../../assets/yardherobadge.svg"
+        alt="Yard Hero Badge"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid pt-4 pb-1">
+  <div ngbDropdown class="d-inline-block">
+    <button
+      type="button"
+      class="btn btn-outline-primary bg-primary text-white"
+      id="jondescription"
+      ngbDropdownToggle
+    >
+      Job Descriptions
+    </button>
+    <div ngbDropdownMenu aria-labelledby="jondescription">
+      <button ngbDropdownItem [routerLink]="['/generalmanager']">
+        General Manager
+      </button>
+      <button ngbDropdownItem [routerLink]="['/assistantmanager']">
+        Assistant Manager
+      </button>
+      <!-- <button ngbDropdownItem [routerLink]="['/assistantprogramdirector']">
+        Assistant Program Director
+      </button> -->
+      <button ngbDropdownItem [routerLink]="['/brandambassador']">
+        Brand Ambassador
+      </button>
+      <!-- <button ngbDropdownItem [routerLink]="['/communitymarketingassistant']">
+        Community Marketing Assistant
+      </button> -->
+      <button ngbDropdownItem [routerLink]="['/hittingtrainer']">
+        Hitting Instructor
+      </button>
+      <button ngbDropdownItem [routerLink]="['/pitchingtrainer']">
+        Pitching Instructor
+      </button>
+      <button ngbDropdownItem [routerLink]="['/speedtrainer']">
+        Speed & Agility Instructor
+      </button>
+      <button ngbDropdownItem [routerLink]="['/generalsportinstructor']">
+        General Sport Instructor
+      </button>
+      <button ngbDropdownItem [routerLink]="['/youthsportssummer']">
+        Summer Camp Instructor
+      </button>
+      <button ngbDropdownItem [routerLink]="['/staff']">
+        Yard Experience Guardian
+      </button>
+    </div>
+  </div>
+</section>
+
+<section
+  class="text-center pt-4"
+  *ngIf="submitted && EmploymentApplication.invalid"
+>
+  <h5 class="text-danger mb-0 fw-bold">
+    There was a problem with your submission.
+  </h5>
+  <p>Errors have been <span class="text-danger">highlighted</span> below.</p>
+  <hr class="mb-0" />
+</section>
+
+<section class="container-fluid pt-4 pb-4">
+  <h5><strong>The Yard Employment Application</strong></h5>
+  <hr />
+  <form
+    class="form"
+    [formGroup]="EmploymentApplication"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-2">
+          <label
+            ><h5>First Name<span class="text-danger">*</span></h5></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="First_Name"
+            formControlName="First_Name"
+            [ngClass]="{
+              'is-invalid': submitted && control['First_Name'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['First_Name'].errors"
+          >
+            <small *ngIf="control['First_Name'].errors['required']"
+              >First Name is required</small
+            >
+          </small>
+        </div>
+        <div class="col-md-2">
+          <label
+            ><h5>Last Name<span class="text-danger">*</span></h5></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="Last_Name"
+            formControlName="Last_Name"
+            [ngClass]="{
+              'is-invalid': submitted && control['Last_Name'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['Last_Name'].errors"
+          >
+            <small *ngIf="control['Last_Name'].errors['required']"
+              >Last Name is required</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block"
+        ><h4>Which position are you interested in?</h4></label
+      >
+      <label class="d-block"
+        >Check all that apply <span class="text-danger">*</span></label
+      >
+      <div class="row">
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            General Manager
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="General Manager"
+              (change)="selectPosition($event, 'General Manager')"
+              
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Assistant Manager
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Assistant Manager"
+              (change)="selectPosition($event, 'Assistant Manager')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Brand Ambassador
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Brand Ambassador"
+              (change)="selectPosition($event, 'Brand Ambassador')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            Hitting Instructor
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Hitting Instructor"
+              (change)="selectPosition($event, 'Hittin Instructor')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Pitching Instructor
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Pitvhing Instructor"
+              (change)="selectPosition($event, 'Pitching Instructor')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Speed & Agility Instructor
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Speed Instructor"
+              (change)="selectPosition($event, 'Speed Instructor')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            General Sports Instructor
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="General Sports Instructor"
+              (change)="
+                selectPosition($event, 'General Sports Instructor')
+              "
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Summer Camp Instructor
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Summer Camp Instructor - Soccer"
+              (change)="
+                selectPosition($event, 'Summer Camp Instructor - Soccer')
+              "
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Yard Experience Guardian
+            <input
+              type="checkbox"
+              name="position"
+              formControlName="position"
+              value="Staff"
+              (change)="selectPosition($event, 'Staff')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['position'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <!-- start  -->
+      </div>
+    </div>
+    <small class="text-danger" *ngIf="submitted && control['position'].errors">
+      <small>This field is required. Please enter a value.</small>
+    </small>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Type of Employment Seeking:</label>
+          <select
+            class="form-control form-select"
+            formControlName="selectedEmploymentSeeking"
+            (change)="changeEmploymentSeeking($event)"
+          >
+            <option selected></option>
+            <option value="Full time">Full time</option>
+            <option value="Part time">Part time</option>
+            <option value="Summer">Summer</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-4">
+          <!--label class="d-block">For Instructors Only: </label-->
+          <label class="d-block"><h4>Please select availability</h4></label>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Monday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="MondayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="MondayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Tuesday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="TuesdayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="TuesdayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Wednesday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="WednesdayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="WednesdayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Thursday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="ThursdayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="ThursdayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Friday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="FridayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="FridayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Saturday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="SaturdayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="SaturdayTo"
+            />
+          </div>
+          <div class="d-flex align-items-center mb-2">
+            <label class="me-3 mb-0 mx-100">Sunday</label>
+            <input
+              type="time"
+              class="form-control me-3"
+              formControlName="SundayFrom"
+            />
+            <span class="me-3">to</span>
+            <input
+              type="time"
+              class="form-control"
+              formControlName="SundayTo"
+            />
+          </div>
+          <!-- <select class="form-control form-select">
+            <option selected></option>
+            <option value="Weekends Only">Weekends Only</option>
+            <option value="Week Days Only">Week Days Only</option>
+            <option value="Both Week Days and Weekends">
+              Both Week Days and Weekends
+            </option>
+          </select> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Are you actively coaching lessons?</label>
+          <select
+            class="form-control form-select"
+            formControlName="selectedteachlesson"
+            (change)="changeTeachLesson($event)"
+          >
+            <option selected></option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>If so, where do you coach them?</label><br />
+      <label class="custom-radio">
+        High School/College
+        <input
+          type="radio"
+          name="wheredoyou"
+          value="High School/College"
+          formControlName="wheredoyou"
+          (change)="selectLocation($event, 'High School/College')"
+        />
+        <span class="radio-box"></span>
+      </label>
+      <label class="custom-radio">
+        YMCA
+        <input
+          type="radio"
+          name="wheredoyou"
+          value="YMCA"
+          formControlName="wheredoyou"
+          (change)="selectLocation($event, 'YMCA')"
+        />
+        <span class="radio-box"></span>
+      </label>
+      <label class="custom-radio">
+        Competitor Facility
+        <input
+          type="radio"
+          name="wheredoyou"
+          value="Competitor Facility"
+          formControlName="wheredoyou"
+          (change)="selectLocation($event, 'Competitor Facility')"
+        />
+        <span class="radio-box"></span>
+      </label>
+      <label class="custom-radio">
+        Other Facility
+        <input
+          type="radio"
+          name="wheredoyou"
+          value="Other Facility"
+          formControlName="wheredoyou"
+          (change)="selectLocation($event, 'Other Facility')"
+        />
+        <span class="radio-box"></span>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block"><h4>What age group(s) do you coach?</h4></label>
+      <label class="d-block"
+        >Check all that apply <span class="text-danger">*</span></label
+      >
+      <div class="row">
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            2 - 5 year olds
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="2to5age"
+              (change)="selectedAgeGroup($event, '2to5age')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            6U to 8U age group
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="6U8U"
+              (change)="selectedAgeGroup($event, '6U8U')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            9U to 11U age group
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="9U11U"
+              (change)="selectedAgeGroup($event, '9U11U')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            12U to 14U age group
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="12U14U"
+              (change)="selectedAgeGroup($event, '12U14U')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            15U to 16U age group
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="15U16U"
+              (change)="selectedAgeGroup($event, '15U16U')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            17U and up age group
+            <input
+              type="checkbox"
+              name="agegroup"
+              formControlName="agegroup"
+              value="17UP"
+              (change)="selectedAgeGroup($event, '17UP')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['agegroup'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+      </div>
+      <small
+        class="text-danger"
+        *ngIf="submitted && control['agegroup'].errors"
+      >
+        <small>This field is required. Please enter a value.</small>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block"
+        ><h4>What areas of expertise do you coach?</h4></label
+      >
+      <label class="d-block"
+        >Check all that apply <span class="text-danger">*</span></label
+      >
+      <div class="row">
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            General knowledge and fundamentals
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="generalk"
+              (change)="selectedExpertise($event, 'General Knowledge')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Pitching
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="Pitching"
+              (change)="selectedExpertise($event, 'Pitching')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            Hitting
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="Hitting"
+              (change)="selectedExpertise($event, 'Hitting')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Fielding
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="Fielding"
+              (change)="selectedExpertise($event, 'Fielding')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            Catching
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="Catching"
+              (change)="selectedExpertise($event, 'Catching')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Speed & agility
+            <input
+              type="checkbox"
+              name="expertise"
+              formControlName="expertise"
+              value="speed"
+              (change)="selectedExpertise($event, 'Speed & Agility')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['expertise'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+      </div>
+      <small
+        class="text-danger"
+        *ngIf="submitted && control['expertise'].errors"
+      >
+        <small>This field is required. Please enter a value.</small>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label class="d-block"><h4>What languages do you speak?</h4></label>
+      <label class="d-block"
+        >Check all that apply <span class="text-danger">*</span></label
+      >
+      <div class="row">
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            English
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="english"
+              (change)="selectedLanguage($event, 'English')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Spanish
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="spanish"
+              (change)="selectedLanguage($event, 'Spanish')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            French
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="french"
+              (change)="selectedLanguage($event, 'French')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            German
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="german"
+              (change)="selectedLanguage($event, 'German')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <label class="checkbox-wrap">
+            Mandarin
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="mandarin"
+              (change)="selectedLanguage($event, 'Mandarin')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+          <label class="checkbox-wrap">
+            Other not listed
+            <input
+              type="checkbox"
+              name="language"
+              formControlName="language"
+              value="other"
+              (change)="selectedLanguage($event, 'Other')"
+            />
+            <span
+              class="checkmark"
+              [ngClass]="{
+                'is-invalid': submitted && control['language'].errors
+              }"
+            ></span>
+          </label>
+        </div>
+      </div>
+      <small
+        class="text-danger"
+        *ngIf="submitted && control['language'].errors"
+      >
+        <small>This field is required. Please enter a value.</small>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>How many sessions do you currently coach each week?</label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Who is your current employer? </label>
+          <input type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-2">
+          <label>Date of Birth <span class="text-danger">*</span></label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="dateofbirth"
+            [ngClass]="{
+              'is-invalid': submitted && control['dateofbirth'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['dateofbirth'].errors"
+          >
+            <small *ngIf="control['dateofbirth'].errors['required']"
+              >Date of Birth is required</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Current Address <span class="text-danger">*</span></label>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-2">
+            <label class="fw-regualr">Street Number</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Street"
+              [ngClass]="{
+                'is-invalid': submitted && control['Street'].errors
+              }"
+            />
+          </div>
+
+          <div class="mb-2">
+            <label class="fw-regualr">Stree Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Address"
+              [ngClass]="{
+                'is-invalid': submitted && control['Address'].errors
+              }"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label class="fw-regualr">City</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="City"
+              [ngClass]="{
+                'is-invalid': submitted && control['City'].errors
+              }"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label class="fw-regualr">State / Province / Region</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="State"
+              [ngClass]="{
+                'is-invalid': submitted && control['State'].errors
+              }"
+            />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-2">
+            <label class="fw-regualr">Postal / Zip Code</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="Postal"
+              [ngClass]="{
+                'is-invalid': submitted && control['Postal'].errors
+              }"
+            />
+          </div>
+        </div>
+      </div>
+      <small class="text-danger" *ngIf="submitted && hasAddressRequiredError()">
+        <small>This field is required. Please enter a value.</small>
+      </small>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-2">
+          <label>Cell Phone <span class="text-danger">*</span></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="CellPhone"
+            [ngClass]="{
+              'is-invalid': submitted && control['CellPhone'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['CellPhone'].errors"
+          >
+            <small *ngIf="control['CellPhone'].errors['required']"
+              >This field is required. Please enter a value.</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label>Email Address <span class="text-danger">*</span></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="EmailID"
+            [ngClass]="{
+              'is-invalid': submitted && control['EmailID'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['EmailID'].errors"
+          >
+            <small *ngIf="control['EmailID'].errors['required']"
+              >This field is required. Please enter a value.</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label
+            >What high school do you attend or graduate from?
+            <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="GraduateFrom"
+            [ngClass]="{
+              'is-invalid': submitted && control['GraduateFrom'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['GraduateFrom'].errors"
+          >
+            <small *ngIf="control['GraduateFrom'].errors['required']"
+              >This field is required. Please enter a value.</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label
+            >Where did you attend college?
+            <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="AttendCollege"
+            [ngClass]="{
+              'is-invalid': submitted && control['AttendCollege'].errors
+            }"
+          />
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['AttendCollege'].errors"
+          >
+            <small *ngIf="control['AttendCollege'].errors['required']"
+              >This field is required. Please enter a value.</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label
+            >Please list your most significant sports related accomplishments.
+            <span class="text-danger">*</span></label
+          >
+          <textarea
+            class="form-control h-100p"
+            formControlName="Accomplishments"
+            [ngClass]="{
+              'is-invalid': submitted && control['Accomplishments'].errors
+            }"
+          ></textarea>
+          <small
+            class="text-danger"
+            *ngIf="submitted && control['Accomplishments'].errors"
+          >
+            <small *ngIf="control['Accomplishments'].errors['required']"
+              >This field is required. Please enter a value.</small
+            >
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label>Coaching Experience? If so, where? </label>
+          <textarea
+            class="form-control h-100p"
+            formControlName="CoachingExp"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label
+            >Are you currently coaching a team? If so, what age/league?
+          </label>
+          <textarea
+            class="form-control h-100p"
+            formControlName="CoachingTeam"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <h5>Please list three references below.</h5>
+
+    <h6>Reference 1</h6>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Name </label>
+          <input type="text" class="form-control" formControlName="r1name" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Email </label>
+          <input type="text" class="form-control" formControlName="r1email" />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Cell Number </label>
+          <input type="text" class="form-control" formControlName="r1cell" />
+        </div>
+      </div>
+    </div>
+
+    <h6>Reference 2</h6>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Name </label>
+          <input type="text" class="form-control" formControlName="r2name" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Email </label>
+          <input type="text" class="form-control" formControlName="r2email" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Cell Number </label>
+          <input type="text" class="form-control" formControlName="r2cell" />
+        </div>
+      </div>
+    </div>
+
+    <h6>Reference 3</h6>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Name </label>
+          <input type="text" class="form-control" formControlName="r3name" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <label>Email </label>
+          <input type="text" class="form-control" formControlName="r3email" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-3">
+          <label>Cell Number </label>
+          <input type="text" class="form-control" formControlName="r3cell" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-12">
+          <label
+            >Is there any additional information you would like to provide us?
+          </label>
+          <textarea
+            class="form-control h-100p"
+            formControlName="additionalInfo"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <button class="btns btn-primary">Submit</button>
+  </form>
+</section>
